@@ -1,0 +1,22 @@
+:root {
+    --primary-color: #06080D;
+    --secondary-color: #66666E;
+    --gray-color: #9999A1;
+    --platinum-color: #E6E6E9;
+    --text-color: #F4F4F6;
+    --font: ;
+    --gradient: linear-gradient(90deg, var(--primary-color) 50%, var(--secondary-color) 20%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
