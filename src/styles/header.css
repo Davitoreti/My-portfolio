@@ -4,9 +4,9 @@
     height: 100vh;
     width: 100%;
     text-align: center;
-    background-image: url('../images/Leonardo_Phoenix_Create_an_image_depicting_a_person_sitting_in_2.jpg');
+    background-image: url('../images/background-header.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 }
 
 .header .header__menu {
