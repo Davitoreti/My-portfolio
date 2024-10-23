@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer .footer__section {
+    display: flex;
+    justify-content: center;
+    width: 85vw;
+    padding: 2rem;
+    border-top: 1px solid white;
+}
+
+.footer .footer__text {
+    font-size: large;
+}

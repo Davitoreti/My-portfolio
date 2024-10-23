@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="./styles/section__about--myself.css">
-    <link rel="stylesheet" href="./styles/section__academicStatus.css">
-    <link rel="stylesheet" href="./styles/section__apresentation.css">
-    <link rel="stylesheet" href="./styles/section__experience.css">
-    <link rel="stylesheet" href="./styles/section__hardSkills.css">
-    <link rel="stylesheet" href="./styles/section__perspective.css">
-    <link rel="stylesheet" href="./styles/section__softSkills.css">
+    <link rel="stylesheet" href="./styles/container__about--myself.css">
+    <link rel="stylesheet" href="./styles/container__academicStatus.css">
+    <link rel="stylesheet" href="./styles/container__apresentation.css">
+    <link rel="stylesheet" href="./styles/container__experience.css">
+    <link rel="stylesheet" href="./styles/container__skills.css">
+    <link rel="stylesheet" href="./styles/container__projects.css">
+    <link rel="stylesheet" href="./styles/container__perspective.css">
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Portfólio Davi Toreti</title>
 </head>
@@ -25,14 +25,17 @@
                     <li class="header__nav--list-item"><a href="#">Home</a></li>
                     <li class="header__nav--list-item"><a href="#">Sobre o projeto</a></li>
                     <li class="header__nav--list-item"><a href="#">Sobre mim</a></li>
-                    <li class="header__nav--list-item"><a href="#">Soft Skills</a></li>
+                    <li class="header__nav--list-item"><a href="#">Skills</a></li>
+                    <li class="header__nav--list-item"><a href="#">Projetos</a></li>
                     <li class="header__nav--list-item"><a href="#">Situação acadêmica</a></li>
                     <li class="header__nav--list-item"><a href="#">Experiência</a></li>
                     <li class="header__nav--list-item"><a href="#">Perspectiva</a></li>
                 </ul>
             </nav>
         </div>
-        <h1 class="header__title">Bem vindo(a) ao meu repositório</h1>
+        <div class="header__title">
+            <h1 class="header__title--text">Bem vindo(a) ao meu repositório</h1>
+        </div>
     </header>
 
     <main class="container">
@@ -40,60 +43,67 @@
             <article class="container__apresentation--section">
                 <h2 class="container__apresentation--title">Sobre o projeto</h2>
                 <p class="container__apresentation--text">Esse repositório foi desenvolvido por mim com o objetivo de me apresentar ao público e também mostrar
-                    todos os projetos desenvolvidos por mim mostrando minha evolução a cada projeto.</p>
+                    todos os projetos desenvolvidos por mim mostrando minha evolução a cada projeto. Sinta-se a vontade para desfrutar de todos os projetos.</p>
             </article>
+            <div class="container__apresentation--images">
+                <div class="container__apresentation--image-left">
+                    <img src="images/Frame 15.png" alt="">
+                </div>
+                <div class="container__apresentation--image-right">
+                    <img src="images/Frame 15.png" alt="">
+                </div>
+            </div>
         </section>
 
         <section class="container__about--mySelf">
             <article class="container__about--mySelf--section">
                 <h2 class="container__about--mySelf--title">Sobre mim</h2>
-                <p class="container__about--myself--text">Meu nome é Davi, eu tenho 20 anos, atualmente trabalho na Universidade Feevale como suporte técnico, mas
+                <p class="container__about--mySelf--text">Meu nome é Davi, eu tenho 20 anos, atualmente trabalho na Universidade Feevale como suporte técnico, mas
                     estou buscando minha primeira oportunidade como desenvolvedor front-end. Estou cursando Informática para
                     Internet na Fundação Escola Técnica Liberato Salzano Vieira da Cunha, o curso é focado em progrmação,
                     que é a área onde quero seguir.</p>
             </article>
         </section>
 
-        <section class="container__carousel">
-            <div class="container__carousel--section">
-                <div class="container__carousel--card">
-                    <img src="" alt="">
-                </div>
-                <div class="container__carousel--card">
-                    <img src="" alt="">
-                </div>
-                <div class="container__carousel--card">
-                    <img src="" alt="">
-                </div>
-            </div>
+        <section class="container__skills">
+            <fieldset class="container__skills--section">
+                <legend class="container__skills--title">Skills</legend>
+                <article class="container__section--softSkills">
+                    <h3 lang="en" class="container__softSkills--title">Soft Skills:</h3>
+                    <ul class="container__softSkills--list">
+                        <li class="container__softSkills--item">Comunicação eficaz</li>
+                        <li class="container__softSkills--item">Trabalho em equipe</li>
+                        <li class="container__softSkills--item">Adaptabilidade</li>
+                        <li class="container__softSkills--item">Pensamento crítico</li>
+                        <li class="container__softSkills--item">Gestão de tempo</li>
+                        <li class="container__softSkills--item">Raciocínio lógico</li>
+                    </ul>
+                </article>
+                    <article class="container__section--hardSkills">
+                        <h3 lang="en" class="container__hardSkills--title">Hard Skills:</h3>
+                        <ul class="container__hardSkills--list">
+                            <li class="container__hardSkills--item">HTML 5</li>
+                            <li class="container__hardSkills--item">CSS 3</li>
+                            <li class="container__hardSkills--item">JavaScript</li>
+                            <li class="container__hardSkills--item">SCSS</li>
+                            <li lang="en" class="container__hardSkills--item">Bootstrap</li>
+                            <li lang="en" class="container__hardSkills--item">Tailwind</li>
+                            <li class="container__hardSkills--item">GIT</li>
+                            <li class="container__hardSkills--item">GitHub</li>
+                        </ul>
+                    </article>
+            </fieldset>
         </section>
 
-        <section class="container__softSkills">
-            <article class="container__softSkills--section">
-                <h3 lang="en" class="container__softSkills--title">Soft Skills</h3>
-                <ul class="container__softSkills--list">
-                    <li>Comunicação eficaz</li>
-                    <li>Trabalho em equipe</li>
-                    <li>Adaptabilidade</li>
-                    <li>Pensamento crítico</li>
-                    <li>Gestão de tempo</li>
-                    <li>Raciocínio lógico</li>
-                </ul>
-            </article>
-        </section>
-
-        <section class="container__hardSkills">
-            <article class="container__hardSkills--section">
-                <h3 lang="en" class="container__hardSkills--title">Hard Skills</h3>
-                <ul class="container__hardSkills--list">
-                    <li>HTML 5</li>
-                    <li>CSS 3</li>
-                    <li>JavaScript</li>
-                    <li>SCSS</li>
-                    <li lang="en">Bootstrap</li>
-                    <li lang="en">Tailwind css</li>
-                    <li>GIT</li>
-                    <li>GitHub</li>
+        <section class="container__projects">
+            <article class="container__projects--section">
+                <h3 class="container__projects--title">Projetos</h3>
+                <ul class="container__projects--list">
+                    <li ><img class="container__projects--list-item" src="images/Frame 15.png" alt=""></li>
+                    <li ><img class="container__projects--list-item" src="images/Frame 15.png" alt=""></li>
+                    <li ><img class="container__projects--list-item" src="images/Frame 15.png" alt=""></li>
+                    <li ><img class="container__projects--list-item" src="images/Frame 15.png" alt=""></li>
+                    
                 </ul>
             </article>
         </section>
@@ -110,22 +120,27 @@
 
         <section class="container__experience">
             <article class="container__experience--section">
-                <h3 class="container__academicStatus--title">Experiência</h3>
-                <p class="container__academicStatus--text">Atualmente trabalho como suporte técnico na Universidade Feevale, mas estou em busca da minha primeira vaga como desenvolvedor front-end.</p>
-                <p class="container__academicStatus--text">Minha experiência na área da programação são os projetos que eu já realizei para pôr em prática os conteúdos que aprendi nos cursos de programação que eu faço.</p>
+                <h3 class="container__experience--title">Experiência</h3>
+                <p class="container__experience--text">Atualmente trabalho como suporte técnico na Universidade Feevale, mas estou em busca da minha primeira vaga como desenvolvedor front-end.</p>
+                <p class="container__experience--text">Minha experiência na área da programação são os projetos que eu já realizei para pôr em prática os conteúdos que aprendi nos cursos de programação que eu faço.</p>
             </article>
         </section>
 
         <section class="container__perspective">
             <article class="container__perspective--section">
                 <h3 class="container__perspective--title">Perspectiva</h3>
-                <p class="container__perspective-text">Eu tenho como um dos grande objetivos da minha vida ser programador, e todos os dias estou estudando e me esforçando pra conseguir essa vaga. Gostaria muito de receber uma oportunidade para que eu consiga colocar em prática todos os coneceitos que estou aprendendo nos cursos que eu faço. Faço e já fiz vários projetos para pôr em prática todos esses conceitos que eu estou aprendendo, mas me conhecendo, eu tenho certeza que uma oportunidade me ajudaria a evoluir muito mais rápido.</p>
+                <p class="container__perspective--text">Eu tenho como um dos grande objetivos da minha vida ser programador, e todos os dias estou estudando e me esforçando pra conseguir essa vaga. Gostaria muito de receber uma oportunidade para que eu consiga colocar em prática todos os coneceitos que estou aprendendo nos cursos que eu faço. Faço e já fiz vários projetos para pôr em prática todos esses conceitos que eu estou aprendendo, mas me conhecendo, eu tenho certeza que uma oportunidade me ajudaria a evoluir muito mais rápido.</p>
             </article>
         </section>
     </main>
 
     <footer class="footer">
-        <small class="footer__text">Desenvolvido por Davi Toreti.</small>
+        <div class="footer__section">
+            <small class="footer__text">Desenvolvido por Davi Toreti.</small>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
     </footer>
 </body>
 

@@ -1,0 +1,21 @@
+.container__about--mySelf {
+    width: 100%;
+    height: 100vh;
+}
+
+.container__about--mySelf .container__about--mySelf--section {
+    
+}
+
+.container__about--mySelf .container__about--mySelf--section .container__about--mySelf--title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container__about--mySelf .container__about--mySelf--section .container__about--mySelf--text {
+    text-align: justify;
+    text-indent: 1rem;
+    margin: 3rem 2rem;
+    font-size: x-large;
+}
+

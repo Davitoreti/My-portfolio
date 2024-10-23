@@ -1,0 +1,59 @@
+.container__skills {
+    width: 100%;
+    height: 100vh;
+}
+
+.container__skills .container__skills--section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    border: none;
+}
+
+.container__skills .container__skills--title {
+    font-size: 3rem;
+}
+
+.container__skills .container__section--softSkills {
+    margin: 3rem;
+    font-size: x-large;
+    
+}
+
+.container__skills .container__skills--section .container__softSkills--title {
+    margin: 1rem;
+}
+
+.container__skills .container__skills--section .container__softSkills--list {
+    display: grid;
+    justify-content: center;
+    text-align: left;
+    gap: 1rem;
+    list-style-position: inside;
+}
+
+.container__skills .container__skills--section .container__softSkills--list .container__softSkills--item {
+
+}
+
+.container__skills .container__section--hardSkills {
+    margin: 3rem;
+    font-size: x-large;
+}
+
+.container__skills .container__skills--section .container__hardSkills--title {
+    margin: 1rem;
+}
+
+.container__skills .container__skills--section .container__hardSkills--list {
+    display: grid;
+    justify-content: center;
+    text-align: left;
+    gap: 1rem;
+    list-style-position: inside;
+}
+
+.container__skills .container__skills--section .container__hardSkills--list .container__hardSkills--item {
+
+}
+
