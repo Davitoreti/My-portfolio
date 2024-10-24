@@ -4,7 +4,7 @@
 }
 
 .container__about--mySelf .container__about--mySelf--section {
-    
+    background: linear-gradient(to bottom, rgba(6, 8, 13, 0.034) , #4b0972);
 }
 
 .container__about--mySelf .container__about--mySelf--section .container__about--mySelf--title {
@@ -17,5 +17,20 @@
     text-indent: 1rem;
     margin: 3rem 2rem;
     font-size: x-large;
+}
+
+.container__about--mySelf .container__about--mySelf--images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 7rem;
+}
+
+.container__about--mySelf .container__about--mySelf--images .container__about--mySelf--image-left {
+    width: 25rem;
+}
+
+.container__about--mySelf .container__about--mySelf--images .container__about--mySelf--image-right {
+    width: 25rem;
 }
 

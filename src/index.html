@@ -18,18 +18,18 @@
 </head>
 
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <div class="header__menu">
             <nav class="header__nav">
                 <ul class="header__nav--list">
-                    <li class="header__nav--list-item"><a href="#">Home</a></li>
-                    <li class="header__nav--list-item"><a href="#">Sobre o projeto</a></li>
-                    <li class="header__nav--list-item"><a href="#">Sobre mim</a></li>
-                    <li class="header__nav--list-item"><a href="#">Skills</a></li>
-                    <li class="header__nav--list-item"><a href="#">Projetos</a></li>
-                    <li class="header__nav--list-item"><a href="#">Situação acadêmica</a></li>
-                    <li class="header__nav--list-item"><a href="#">Experiência</a></li>
-                    <li class="header__nav--list-item"><a href="#">Perspectiva</a></li>
+                    <li class="header__nav--list-item"><a href="#header">Home</a></li>
+                    <li class="header__nav--list-item"><a href="#container__apresentation">Sobre o projeto</a></li>
+                    <li class="header__nav--list-item"><a href="#container__about--mySelf">Sobre mim</a></li>
+                    <li class="header__nav--list-item"><a href="#container__skills">Skills</a></li>
+                    <li class="header__nav--list-item"><a href="#container__projects">Projetos</a></li>
+                    <li class="header__nav--list-item"><a href="#container__academicStatus">Situação acadêmica</a></li>
+                    <li class="header__nav--list-item"><a href="#container__experience">Experiência</a></li>
+                    <li class="header__nav--list-item"><a href="#container__perspective">Perspectiva</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,7 +39,7 @@
     </header>
 
     <main class="container">
-        <section class="container__apresentation">
+        <section id="container__apresentation" class="container__apresentation">
             <article class="container__apresentation--section">
                 <h2 class="container__apresentation--title">Sobre o projeto</h2>
                 <p class="container__apresentation--text">Esse repositório foi desenvolvido por mim com o objetivo de me apresentar ao público e também mostrar
@@ -55,17 +55,21 @@
             </div>
         </section>
 
-        <section class="container__about--mySelf">
+        <section id="container__about--mySelf" class="container__about--mySelf">
             <article class="container__about--mySelf--section">
                 <h2 class="container__about--mySelf--title">Sobre mim</h2>
                 <p class="container__about--mySelf--text">Meu nome é Davi, eu tenho 20 anos, atualmente trabalho na Universidade Feevale como suporte técnico, mas
                     estou buscando minha primeira oportunidade como desenvolvedor front-end. Estou cursando Informática para
                     Internet na Fundação Escola Técnica Liberato Salzano Vieira da Cunha, o curso é focado em progrmação,
                     que é a área onde quero seguir.</p>
+                    <div class="container__about--mySelf--images">
+                        <img class="container__about--mySelf--image-left" src="images/Frame 15.png" alt="">
+                        <img class="container__about--mySelf--image-right" src="images/Frame 15.png" alt="">
+                    </div>
             </article>
         </section>
 
-        <section class="container__skills">
+        <section id="container__skills" class="container__skills">
             <fieldset class="container__skills--section">
                 <legend class="container__skills--title">Skills</legend>
                 <article class="container__section--softSkills">
@@ -90,12 +94,13 @@
                             <li lang="en" class="container__hardSkills--item">Tailwind</li>
                             <li class="container__hardSkills--item">GIT</li>
                             <li class="container__hardSkills--item">GitHub</li>
+                            <li class="container__hardSkills--item">Figma</li>
                         </ul>
                     </article>
             </fieldset>
         </section>
 
-        <section class="container__projects">
+        <section id="container__projects" class="container__projects">
             <article class="container__projects--section">
                 <h3 class="container__projects--title">Projetos</h3>
                 <ul class="container__projects--list">
@@ -108,7 +113,7 @@
             </article>
         </section>
 
-        <section class="container__academicStatus">
+        <section id="container__academicStatus" class="container__academicStatus">
             <article class="container__academicStatus--section">
                 <h3 class="container__academicStatus--title">Situação acadêmica</h3>
                 <p class="container__academicStatus--text">Atualmente estou cursando Informática para Internet na Fundação Escola Técnica Liberato Salzano Vieira da
@@ -118,7 +123,7 @@
             </article>
         </section>
 
-        <section class="container__experience">
+        <section id="container__experience" class="container__experience">
             <article class="container__experience--section">
                 <h3 class="container__experience--title">Experiência</h3>
                 <p class="container__experience--text">Atualmente trabalho como suporte técnico na Universidade Feevale, mas estou em busca da minha primeira vaga como desenvolvedor front-end.</p>
@@ -126,7 +131,7 @@
             </article>
         </section>
 
-        <section class="container__perspective">
+        <section id="container__perspective" class="container__perspective">
             <article class="container__perspective--section">
                 <h3 class="container__perspective--title">Perspectiva</h3>
                 <p class="container__perspective--text">Eu tenho como um dos grande objetivos da minha vida ser programador, e todos os dias estou estudando e me esforçando pra conseguir essa vaga. Gostaria muito de receber uma oportunidade para que eu consiga colocar em prática todos os coneceitos que estou aprendendo nos cursos que eu faço. Faço e já fiz vários projetos para pôr em prática todos esses conceitos que eu estou aprendendo, mas me conhecendo, eu tenho certeza que uma oportunidade me ajudaria a evoluir muito mais rápido.</p>
