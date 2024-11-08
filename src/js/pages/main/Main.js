@@ -12,38 +12,46 @@ window.addEventListener('scroll', () => {
 
 });
 
-// const containerProjectsList = document.querySelector('.container__projects--list');
-// const containerProjectsListImages = document.querySelectorAll('.container__projects--list-item')
-
-// let counter = 0;
-
-// function slider() {
-
-//     counter++;
-
-//     const clone = containerProjectsList.cloneNode(true);
-
-//     containerProjectsListImages.forEach((image) => {
-
-
-//         const moveX = counter * 20;
-//         image.style.transform = `translateX(${-moveX}rem)`;
-//     })
-// }  
-
 const containerProjectsList = document.querySelector('.container__projects--list');
 const containerProjectsListImages = document.querySelectorAll('.container__projects--list-item');
+
+let isMouseDown = false;
+
+containerProjectsList.addEventListener('mousedown', () => {
+    isMouseDown = true;
+    containerProjectsList.style.cursor = 'grabbing'
+})
+
+containerProjectsList.addEventListener('mouseup', () => {
+    isMouseDown = false;
+    containerProjectsList.style.cursor = 'grab'
+})
+
+containerProjectsList.addEventListener('mousemove', (ev) => {
+    if(isMouseDown) {
+        ev.clientX
+    }
+})
 
 let counter = 0; 
 
 function moveSlider() {
-    counter++; 
-
-    // Movendo as imagens uma por uma para a esquerda
+    counter++;
+  
+    const imagesClone = containerProjectsList.cloneNode(true);
+  
     containerProjectsListImages.forEach((image) => {
-        const moveX =  counter * 20; // Faz o movimento das imagens baseado no contador
-        image.style.transform = `translateX(${moveX}rem)`;  // Aplique a transição de movimento
+      const moveX = counter * 10;
+      image.style.transform = `translateX(${moveX}rem)`;
     });
-}
+
+    if(counter >= containerProjectsListImages.length -1){
+        counter = 0;
+        containerProjectsList.forEach((image) => {
+            const moveX = counter * 10;
+            image.style.transform = `translateX(${moveX}rem)`;
+        })
+    }
+  }
 
 setInterval(moveSlider, 3000);
