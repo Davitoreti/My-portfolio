@@ -12,9 +12,9 @@
     .header__nav {
         width: 100%;
         border-bottom: 1px solid white;
-        padding: 0rem 0.7rem;
         position: fixed;
         z-index: 1;
+        background-color: var(--tertiary-color);
     }
 
     #header__nav--list-image-logo{
@@ -28,7 +28,6 @@
         
         img{
             width: 2rem;
-           
         }
     }
 
@@ -58,11 +57,17 @@
         color: white;
     }
 
-    .hover {
+    .hover__darkTheme {
         padding: 1rem;
         background: linear-gradient(to top, #a6a6a642, #262626);
         border-bottom: 1px solid var(--quinary-color);
         cursor: pointer;
+    }
+
+    .hover__clearTheme {
+        @extend .hover__darkTheme;
+        background: linear-gradient(to top, #26262642, #a6a6a642);
+        border-bottom: 1px solid var(--secondary-color);
     }
 
     .header__title {
@@ -74,7 +79,7 @@
         height: 90vh;
     }
 
-    .header__clearTheme {
+    .header__clearTheme-title {
         background-image: linear-gradient(to top, rgba(166, 166, 166, 1), rgb(166, 166, 166, 0)), url('../assets/images/header/Image-header.jpg');
         background-size: cover;
         background-position: center;
