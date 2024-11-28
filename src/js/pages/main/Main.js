@@ -1,30 +1,41 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 
-   new Swiper('.swiper-container', {
+   const swiper = new Swiper('.swiper-container', {
     loop: true,
     speed: 2000,
     grabCursor: true,
-    autoplay: {
-      delay: 2000,
-    },
     slidesPerView: 3,
     spaceBetween: 10,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-});
+  });
 
-window.addEventListener('scroll', () => {
-    const containerApresentationImageLeft = document.querySelector('.container__apresentation--image-left');
-    const containerApresentationImageRight = document.querySelector('.container__apresentation--image-right');
+  setInterval(() => {
+    swiper.slideNext();
+  }, 2000);
 
-    const scrollPosition = window.scrollY;
+ function handleRotation() {
 
-    const rotationDegreeLeft = scrollPosition * 0.4 / Math.min(-50);
-    const rotationDegreeRight = scrollPosition * 0.4 / Math.min(50);
+  const containerApresentationImageLeft = document.querySelector('.container__apresentation--image-left');
+  const containerApresentationImageRight = document.querySelector('.container__apresentation--image-right');
 
-    containerApresentationImageLeft.style.transform = `rotate(${rotationDegreeLeft}deg)` 
-    containerApresentationImageRight.style.transform = `rotate(${rotationDegreeRight}deg)`
+  if(window.innerHeight <= 768) {
+    const scrolly = window.scrollY;
 
-});
+    const rotation = scrolly / 2;
+
+    containerApresentationImageLeft.style.transform = `rotate(${rotation}deg)`;
+    containerApresentationImageRight.style.transform = `rotate(${rotation}deg)`;
+  } else {
+    containerApresentationImageLeft.style.transform = `rotate(0deg)`; 
+    containerApresentationImageRight.style.transform = `rotate(0deg)`;
+  }
+ }
+
+ window.addEventListener('scroll', handleRotation);
+ window.addEventListener('resize', handleRotation);
+
+ export default handleRotation();

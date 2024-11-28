@@ -1,5 +1,8 @@
+import moonImage from '../../../assets/icons/lua-icon.png';
+import sunImage from '../../../assets/icons/sol-icon.png';
+
+let menuItem = document.querySelectorAll('.header__nav--list-item');
 export function handleMenuHover() {
-    let menuItem = document.querySelectorAll('.header__nav--list-item');
 
     menuItem.forEach((item) => {
         const body = document.querySelector('body');
@@ -19,7 +22,26 @@ export function handleMenuHover() {
             }
         });
     });
-}
+};
+
+export function handleTabNavigation() {
+
+    menuItem.forEach((item, index) => {
+        item.setAttribute('tabindex', index + 1); 
+    });
+
+    document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Tab') {
+            const focusedElement = document.activeElement;
+
+            if (focusedElement === menuItem[menuItem.length - 1] && ev.shiftKey === false) {
+                const firstContentSection = document.querySelector('header_title');
+                firstContentSection && firstContentSection.focus();
+            }
+        }
+    });
+};
+
 export function handleThemeSwitch() {
     const body = document.querySelector('body');
     const imageSwitch = document.getElementById('imageSwitch');
@@ -36,7 +58,17 @@ export function handleThemeSwitch() {
     const footerSection = document.querySelector('.footer__section');
 
     imageSwitch.addEventListener('click', () => {
-        
+        toggleTheme();
+    });
+
+    imageSwitch.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter') {
+            ev.preventDefault(); 
+            toggleTheme();
+        }
+    });
+
+    function toggleTheme() {
         body.classList.toggle('darkTheme');
         body.classList.toggle('clearTheme');
 
@@ -45,14 +77,14 @@ export function handleThemeSwitch() {
         } else {
             clearThemeMode();
         }
-    });
-
+    }
     function clearThemeMode() {
         headerNav.style.borderBottom = '1px solid #0D0D0D';
         headerNav.style.backgroundColor = '#A6A6A6';
         headerTitle.classList.add('header__clearTheme-title');
         headerTitle.classList.remove('header__title');
-        imageSwitch.src = 'assets/icons/lua-icon.png';
+        imageSwitch.src = moonImage;
+        imageSwitch.setAttribute('alt', 'tema claro');
         containerApresentation.style.background = 'linear-gradient(to top, #A6A6A640, #A6A6A605)';
         containerApresentationTitle.style.color = '#0D0D0D';
         header.style.color = '#0D0D0D';
@@ -82,7 +114,8 @@ export function handleThemeSwitch() {
         headerNav.style.backgroundColor = '#262626';
         headerTitle.classList.add('header__title');
         headerTitle.classList.remove('header__clearTheme-title');
-        imageSwitch.src = 'assets/icons/sol-icon.png';
+        imageSwitch.src = sunImage;
+         imageSwitch.setAttribute('alt', 'tema escuro');
         containerApresentation.style.background = 'linear-gradient(to bottom, #26262607, #262626)';
         containerApresentationTitle.style.color = 'white';
         header.style.color = 'white';
@@ -110,5 +143,6 @@ export function handleThemeSwitch() {
 
 export default {
     handleMenuHover,
-    handleThemeSwitch
+    handleThemeSwitch,
+    handleTabNavigation
 };

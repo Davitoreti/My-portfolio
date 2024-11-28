@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/container__about--myself.css">
-    <link rel="stylesheet" href="./css/container__academicStatus.css">
-    <link rel="stylesheet" href="./css/container__apresentation.css">
-    <link rel="stylesheet" href="./css/container__experience.css">
-    <link rel="stylesheet" href="./css/container__skills.css">
-    <link rel="stylesheet" href="./css/container__projects.css">
-    <link rel="stylesheet" href="./css/container__perspective.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./scss/header.scss">
+    <link rel="stylesheet" href="./scss/footer.scss">
+    <link rel="stylesheet" href="./scss/container__about--myself.scss">
+    <link rel="stylesheet" href="./scss/container__academicStatus.scss">
+    <link rel="stylesheet" href="./scss/container__apresentation.scss">
+    <link rel="stylesheet" href="./scss/container__experience.scss">
+    <link rel="stylesheet" href="./scss/container__skills.scss">
+    <link rel="stylesheet" href="./scss/container__projects.scss">
+    <link rel="stylesheet" href="./scss/container__perspective.scss">
+    <link rel="stylesheet" href="./scss/styles.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/index.js" type="module" defer></script>
@@ -24,7 +24,7 @@
     <header id="header" class="header">
         <div class="header__menu">
             <nav id="header__nav" class="header__nav">
-                <ul class="header__nav--list">
+                <ul class="header__nav--list" aria-label="Menu de navegação">
                     <li class="header__nav--list-item" id="header__nav--list-image-logo"><img
                             src="assets/icons/davi-icon.svg" alt="ícone do Davi, autor do site"></li>
                     <li class="header__nav--list-item"><a href="#header">Home</a></li>
@@ -36,17 +36,17 @@
                     <li class="header__nav--list-item"><a href="#container__experience">Experiência</a></li>
                     <li class="header__nav--list-item"><a href="#container__perspective">Perspectiva</a></li>
                     <li class="header__nav--list-item" id="header__nav--list-image-switchTheme"><img id="imageSwitch"
-                            src="assets/icons/sol-icon.png" alt="ícone de trocar para a cor para claro"></li>
+                            src="assets/icons/sol-icon.png" alt="ícone de trocar o tema para claro ou escuro" tabindex="0"></li>
                 </ul>
             </nav>
         </div>
-        <div class="header__title">
+        <div class="header__title" tabindex="0">
             <h1 class="header__title--text">Bem vindo(a) ao meu repositório</h1>
         </div>
     </header>
 
     <main class="container">
-        <section id="container__apresentation" class="container__apresentation">
+        <section id="container__apresentation" class="container__apresentation" tabindex="0">
             <article class="container__apresentation--section">
                 <h2 class="container__apresentation--title">Sobre o projeto</h2>
                 <p class="container__apresentation--text">Esse repositório foi desenvolvido por mim com o objetivo de me
@@ -64,7 +64,7 @@
             </div>
         </section>
 
-        <section id="container__about--mySelf" class="container__about--mySelf">
+        <section id="container__about--mySelf" class="container__about--mySelf" tabindex="0">
             <article class="container__about--mySelf--section">
                 <h2 class="container__about--mySelf--title">Sobre mim</h2>
                 <p class="container__about--mySelf--text">Meu nome é Davi, eu tenho 20 anos, atualmente trabalho na
@@ -85,7 +85,7 @@
 
         <section id="container__skills" class="container__skills">
             <h2 class="container__skills--title">Skills</h2>
-            <div class="container__skills--section">
+            <div class="container__skills--section" tabindex="0">
                 <article class="container__section--softSkills">
                     <h3 lang="en" class="container__softSkills--title">Soft Skills:</h3>
                     <ul class="container__softSkills--list">
@@ -114,10 +114,10 @@
             </div>
         </section>
 
-        <section class="container__projects">
+        <section id="container__projects" class="container__projects" aria-label="Projetos" tabindex="0">
             <article class="container__projects--section">
                 <h3 class="container__projects--title">Projetos</h3>
-                <div class="swiper-container">
+                <div class="swiper-container" aria-label="Carrossel com imagem dos projetos">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img class="swiper-slide-img" src="./assets/images/projects/Calendar.png"
@@ -154,7 +154,7 @@
             </article>
         </section>
 
-        <section id="container__academicStatus" class="container__academicStatus">
+        <section id="container__academicStatus" class="container__academicStatus" tabindex="0">
             <article class="container__academicStatus--section">
                 <h3 class="container__academicStatus--title">Situação acadêmica</h3>
                 <p class="container__academicStatus--text">Atualmente estou cursando Informática para Internet na
@@ -182,7 +182,7 @@
             </div>
         </section>
 
-        <section id="container__experience" class="container__experience">
+        <section id="container__experience" class="container__experience" tabindex="0">
             <article class="container__experience--section">
                 <h3 class="container__experience--title">Experiência</h3>
                 <p class="container__experience--text">Atualmente trabalho como suporte técnico na Universidade Feevale,
@@ -200,12 +200,12 @@
             </div>
         </section>
 
-        <section id="container__perspective" class="container__perspective">
+        <section id="container__perspective" class="container__perspective" tabindex="0">
             <article class="container__perspective--section">
                 <h3 class="container__perspective--title">Perspectiva</h3>
                 <p class="container__perspective--text">Eu tenho como um dos grande objetivos da minha vida ser
                     programador, e todos os dias estou estudando e me esforçando pra conseguir essa vaga. Gostaria muito
-                    de receber uma oportunidade para que eu consiga colocar em prática todos os coneceitos que estou
+                    de receber uma oportunidade para que eu consiga colocar em prática todos os conceitos que estou
                     aprendendo nos cursos que eu faço. Faço e já fiz vários projetos para pôr em prática todos esses
                     conceitos que eu estou aprendendo, mas me conhecendo, eu tenho certeza que uma oportunidade me
                     ajudaria a evoluir muito mais rápido.</p>
@@ -217,12 +217,12 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__section">
+    <footer class="footer" aria-label="Rodapé">
+        <div class="footer__section" tabindex="0">
             <small class="footer__text">Desenvolvido por Davi Toreti.</small>
             <div class="footer__icons">
-                <a href=""><img src="assets/icons/github-icon.png" alt="ícone do git hub"></a>
-                <a href=""><img src="assets/icons/linkedin-icon.png" alt="ícone do Linkedin"></a>
+                <a href="https://github.com/Davitoreti" target="_blank"><img src="assets/icons/github-icon.png" alt="ícone do git hub"></a>
+                <a href="https://www.linkedin.com/in/davi-toreti/" target="_blank"><img src="assets/icons/linkedin-icon.png" alt="ícone do Linkedin"></a>
             </div>
         </div>
     </footer>
