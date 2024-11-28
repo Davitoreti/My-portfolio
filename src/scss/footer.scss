@@ -1,0 +1,34 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .footer__text {
+        position: relative;
+        top: 1rem;
+        font-size: large;
+    }
+
+    .footer__section {
+        width: 85vw;
+        padding: 2rem;
+        border-top: 1px solid white;
+    }
+
+    .footer__icons {
+        display: flex;
+        justify-content: end;
+        gap: 1.5rem;
+        position: relative;
+        bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 320px) and ( max-width: 425px) {
+    .footer {
+        .footer__section {
+            width: 60%;
+            padding: 0rem;
+        }
+    }
+}
