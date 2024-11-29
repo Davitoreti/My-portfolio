@@ -40,6 +40,8 @@
 
 @media (min-width: 320px) and ( max-width: 425px) {
     .container__apresentation {
+        height: 100%;
+        margin-bottom: 2rem;
 
         .container__apresentation--title {
             font-size: 2rem;
@@ -52,10 +54,39 @@
             flex-direction: column;
             align-items: center;
             margin: 0.5rem 0rem;
+            gap: 3rem;
         } 
 
         img {
-            width: 10rem;
+            width: 15rem;
+            border: 1px solid white;
+            padding: 0.5rem;
+        }
+
+    }
+}
+
+@media (min-width: 426px) and ( max-width: 768px) {
+    .container__apresentation {
+        height: 100%;
+        margin-bottom: 2rem;
+
+        .container__apresentation--title {
+            font-size: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        .container__apresentation--images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0.5rem 0rem;
+            gap: 3rem;
+        } 
+
+        img {
+            width: 15rem;
             border: 1px solid white;
             padding: 0.5rem;
         }

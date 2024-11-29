@@ -5,24 +5,32 @@ import 'swiper/swiper-bundle.css';
     loop: true,
     speed: 2000,
     grabCursor: true,
-    slidesPerView: 3,
-    spaceBetween: 10,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 100,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    }
   });
 
   setInterval(() => {
     swiper.slideNext();
   }, 2000);
 
- function handleRotation() {
+export function handleRotation() {
 
   const containerApresentationImageLeft = document.querySelector('.container__apresentation--image-left');
   const containerApresentationImageRight = document.querySelector('.container__apresentation--image-right');
 
-  if(window.innerHeight <= 768) {
+  if(window.innerHeight >= 768) {
     const scrolly = window.scrollY;
 
     const rotation = scrolly / 2;
@@ -37,5 +45,3 @@ import 'swiper/swiper-bundle.css';
 
  window.addEventListener('scroll', handleRotation);
  window.addEventListener('resize', handleRotation);
-
- export default handleRotation();

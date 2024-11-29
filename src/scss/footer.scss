@@ -27,8 +27,12 @@
 @media (min-width: 320px) and ( max-width: 425px) {
     .footer {
         .footer__section {
-            width: 60%;
-            padding: 0rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
         }
     }
 }

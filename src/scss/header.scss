@@ -97,6 +97,22 @@
     }
 }
 
+@media (width: 320px) {
+    .header {
+        .header__nav--list-item{
+            font-size: small;
+            padding: 0.3rem;
+        }
+
+        #header__nav--list-image-switchTheme{   
+            position: relative;
+            top: 0.2rem;
+            right: 0;
+            left: 1%;
+        }
+    }
+}
+
 @media (min-width: 320px) and ( max-width: 425px) {
     .header{
         width: 100%;
@@ -108,28 +124,44 @@
 
     .header__nav {
         width: 100vw;
+        position: absolute;
     }
 
     #header__nav--list-image-logo{ 
+        display: flex;
+        justify-content: center;
         position: relative;
-        top: 1.2rem;
-        right: 2%;
-
+        margin-bottom: 1rem;
+        top: 0.5rem;
+        right: 0;
+    
         img{
-            width: 1rem;
+                width: 1rem;
         }
     }
 
     #header__nav--list-image-switchTheme{   
+        position: relative;
+        top: 0.2rem;
+        right: 0;
+        left: 2%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        
         img{
             width: 1rem;
         }
     }
 
     .header__nav--list-item{
-        display: inline-flex;
-        font-size: xx-small;
+        font-size: small;
         padding: 0.5rem;
+    }
+
+    .header__nav--list-item a:visited{
+        text-decoration: none;
+        color: white;
     }
 
     .header__title {
@@ -140,7 +172,71 @@
         display: grid;
         align-items: center;
         height: 100vh;
-        font-size: 2rem;
+        font-size: 2.5rem;
+        max-height: 90%;
+    }
+    }    
+}
+
+@media (min-width: 426px) and ( max-width: 768px) {
+    .header{
+        width: 100%;
+    
+    .header__menu {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__nav {
+        width: 100vw;
+        position: absolute;
+    }
+
+    #header__nav--list-image-logo{ 
+        
+        position: relative;
+        margin-bottom: 1rem;
+        top: 0.5rem;
+        right: 0;
+    
+        img{
+                width: 1rem;
+        }
+    }
+
+    #header__nav--list-image-switchTheme{   
+        position: relative;
+        top: 0.2rem;
+        right: 0;
+        left: 2%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        
+        img{
+            width: 1rem;
+        }
+    }
+
+    .header__nav--list-item{
+        font-size: small;
+        padding: 0.5rem;
+    }
+
+    .header__nav--list-item a:visited{
+        text-decoration: none;
+        color: white;
+    }
+
+    .header__title {
+        background-size: cover;
+    }
+
+    .header__title--text {
+        display: grid;
+        align-items: center;
+        height: 100vh;
+        font-size: 2.5rem;
         max-height: 90%;
     }
     }    
