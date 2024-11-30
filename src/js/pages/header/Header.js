@@ -139,10 +139,24 @@ export function handleThemeSwitch() {
         });
         footerSection.style.borderTop = '1px solid white';
     };
-}
+};
+
+export function handleMenuDropDown() {
+    const menuDropDown = document.getElementById('navbar');
+    const headerNav = document.getElementById('header__nav');
+
+    if(window.innerWidth <= 768) {
+        menuDropDown.style.display = 'flex';
+        headerNav.style.display = 'none';
+    } else {
+        menuDropDown.style.display = 'none';
+        headerNav.style.display = 'flex';
+    }
+};
 
 export default {
     handleMenuHover,
     handleThemeSwitch,
-    handleTabNavigation
+    handleTabNavigation,
+    handleMenuDropDown
 };

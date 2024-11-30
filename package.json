@@ -1,0 +1,20 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "![image](https://github.com/user-attachments/assets/53a3c5f3-4cc9-4306-8864-fa9396dde7db)",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.13.2",
+    "swiper": "^11.1.15"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.2",
+    "svgo": "^3.3.2"
+  }
+}
