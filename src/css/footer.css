@@ -21,4 +21,25 @@
   bottom: 0.5rem;
 }
 
+@media (min-width: 320px) and (max-width: 600px) {
+  .footer .footer__section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .footer .footer__text {
+    position: relative;
+    top: 0.5rem;
+    font-size: large;
+  }
+}
+@media (min-width: 1600px) {
+  .footer .footer__text {
+    font-size: xx-large;
+  }
+}
+
 /*# sourceMappingURL=footer.css.map */

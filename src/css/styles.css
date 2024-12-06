@@ -1,13 +1,9 @@
 :root {
-  --primary-color: rgb(6, 8, 13);
-  --secondary-color: #0D0D0D;
-  --tertiary-color: #262626;
-  --quaternary-color: #404040;
-  --quinary-color: #A6A6A6;
-  --text-color: #F2F2F2;
-  --gray-color: #9999A1;
-  --platinum-color: #E6E6E9;
-  --font: ;
+  --color-background-dark: rgb(6, 8, 13);
+  --color-background-secondary: #0D0D0D;
+  --color-background-tertiary: #262626;
+  --color-border-light: #A6A6A6;
+  --color-text-primary: #F2F2F2;
 }
 
 * {
@@ -18,8 +14,9 @@
 }
 
 body {
-  color: var(--text-color);
-  background-color: var(--tertiary-color);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-tertiary);
+  hyphens: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,6 +12,7 @@
   "dependencies": {
     "my-portfolio": "file:",
     "parcel": "^2.13.2",
+    "sass": "^1.82.0",
     "swiper": "^11.1.15"
   },
   "devDependencies": {

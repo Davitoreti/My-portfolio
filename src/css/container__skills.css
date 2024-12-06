@@ -1,6 +1,6 @@
 .container__skills {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,6 +48,69 @@
   text-align: left;
   gap: 1rem;
   list-style-position: inside;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .container__skills {
+    width: 100%;
+    height: 100%;
+  }
+  .container__skills .container__skills--title {
+    font-size: 2rem;
+  }
+  .container__skills .container__skills--section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .container__skills .container__section--softSkills,
+  .container__skills .container__section--hardSkills {
+    margin: 3rem 0;
+    font-size: large;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  .container__skills {
+    width: 100%;
+    height: 100%;
+  }
+  .container__skills .container__skills--title {
+    font-size: 2rem;
+  }
+  .container__skills .container__skills--section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .container__skills .container__section--softSkills,
+  .container__skills .container__section--hardSkills {
+    margin: 3rem 0;
+    font-size: large;
+  }
+  .container__skills .container__skills--title {
+    font-size: 2.5rem;
+  }
+  .container__skills .container__section--softSkills,
+  .container__skills .container__section--hardSkills {
+    font-size: x-large;
+  }
+}
+@media (min-width: 769px) and (max-width: 853px) {
+  .container__skills .container__section--softSkills,
+  .container__skills .container__section--hardSkills {
+    font-size: large;
+  }
+}
+@media (min-width: 1600px) {
+  .container__skills .container__skills--title {
+    font-size: 4rem;
+  }
+  .container__skills .container__section--softSkills,
+  .container__skills .container__section--hardSkills {
+    font-size: xx-large;
+  }
 }
 
 /*# sourceMappingURL=container__skills.css.map */
