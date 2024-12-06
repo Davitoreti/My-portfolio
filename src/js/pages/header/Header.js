@@ -3,49 +3,46 @@ import sunImage from '../../../assets/icons/sol-icon.png';
 import menuIconWhite from '../../../assets/icons/menu-icon-white.png';
 import menuIconBlack from '../../../assets/icons/menu-icon-black.png';
 
-let menuItem = document.querySelectorAll('.header__nav--list-item');
+let menuItems = document.querySelectorAll('.header__nav--list-item');
+const body = document.querySelector('body');
+
+function toggleHoverClass(item) {
+    const themeClass = body.classList.contains('darkTheme') ? 'darkTheme' : 'clearTheme';
+    const hoverClass = `hover__${themeClass}`;
+    item.classList.toggle(hoverClass);
+};
+
 export function handleMenuHover() {
-
-    menuItem.forEach((item) => {
-        const body = document.querySelector('body');
-        item.addEventListener('mouseover', () => {
-            if(body.classList.contains('darkTheme')){
-                item.classList.toggle('hover__darkTheme');
-            } else {
-                item.classList.toggle('hover__clearTheme');
-            }
-        });
-
-        item.addEventListener('mouseout', () => {
-            if(body.classList.contains('darkTheme')){
-                item.classList.toggle('hover__darkTheme');
-            } else {
-                item.classList.toggle('hover__clearTheme');
-            }
-        });
+    menuItems.forEach((item) => {
+        item.addEventListener('mouseover', () => toggleHoverClass(item));
+        item.addEventListener('mouseout', () => toggleHoverClass(item));
     });
 };
 
 export function handleTabNavigation() {
-
-    menuItem.forEach((item, index) => {
-        item.setAttribute('tabindex', index + 1); 
+    menuItems.forEach((item, index) => {
+        item.setAttribute('tabindex', index + 1);
     });
 
     document.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Tab') {
-            const focusedElement = document.activeElement;
-
-            if (focusedElement === menuItem[menuItem.length - 1] && ev.shiftKey === false) {
-                const firstContentSection = document.querySelector('header__darkTheme-title');
-                firstContentSection && firstContentSection.focus();
-            }
-        }
+        if (ev.key === 'Tab' && !ev.shiftKey) {
+            const lastMenuItem = menuItems[menuItems.length - 1];
+            if (document.activeElement === lastMenuItem) {
+                const firstContentSection = document.querySelector('.header__darkTheme-title');
+                if (firstContentSection) firstContentSection.focus();
+            };
+        };
     });
 };
 
 export function handleThemeSwitch() {
     const body = document.querySelector('body');
+    const header = document.getElementById('header');
+    const headerNav = document.getElementById('header__nav');
+    const headerNavItem = document.querySelectorAll('a');
+    const headerNavList = document.querySelector('.header__nav--list');
+    const headerButton = document.querySelector('.header__nav--button img');
+    const headerTitle = document.querySelector('.header__darkTheme-title');
     const imageSwitch = document.getElementById('imageSwitch');
     const containerApresentation = document.getElementById('container__apresentation');
     const containerApresentationImages = document.querySelectorAll('.container__apresentation img');
@@ -53,24 +50,7 @@ export function handleThemeSwitch() {
     const containerExperienceImages = document.querySelectorAll('.container__experience img');
     const containerPerspectiveImages = document.querySelectorAll('.container__perspective img');
     const containerApresentationTitle = document.querySelector('h2');
-    const header = document.getElementById('header');
-    const headerNav = document.getElementById('header__nav');
-    const headerNavItem = document.querySelectorAll('a');
-    const headerNavList = document.querySelector('.header__nav--list');
-    const headerButton = document.querySelector('.header__nav--button img');
-    const headerTitle = document.querySelector('.header__darkTheme-title');
     const footerSection = document.querySelector('.footer__section');
-
-    imageSwitch.addEventListener('click', () => {
-        toggleTheme();
-    });
-
-    imageSwitch.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Enter') {
-            ev.preventDefault(); 
-            toggleTheme();
-        }
-    });
 
     function toggleTheme() {
         body.classList.toggle('darkTheme');
@@ -80,82 +60,127 @@ export function handleThemeSwitch() {
             darkThemeMode();
         } else {
             clearThemeMode();
-        }
-    }
+        };
+    };
+
+    imageSwitch.addEventListener('click', toggleTheme);
+
+    imageSwitch.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter') {
+            ev.preventDefault(); 
+            toggleTheme();
+        };
+    });
+
     function clearThemeMode() {
-        headerNav.style.borderBottom = '1px solid #0D0D0D';
-        headerNav.style.backgroundColor = '#A6A6A6';
-        if(window.innerWidth <= 712) {
+        const clearElements = [
+            { element: headerNav, styles: { borderBottom: '1px solid #0D0D0D', backgroundColor: '#A6A6A6' } },
+            { element: headerButton, styles: { backgroundColor: '#A6A6A6' }, src: menuIconBlack },
+            { element: headerTitle, addClass: 'header__clearTheme-title', removeClass: 'header__darkTheme-title' },
+            { element: imageSwitch, src: moonImage, alt: 'tema claro' },
+            { element: containerApresentation, styles: { background: 'linear-gradient(to top, #A6A6A640, #A6A6A605)' } },
+            { element: containerApresentationTitle, styles: { color: '#0D0D0D' } },
+            { element: header, styles: { color: '#0D0D0D', backgroundColor: '#A6A6A6' } },
+            { element: body, styles: { backgroundColor: '#A6A6A6', color: '#0D0D0D' } },
+            { element: footerSection, styles: { borderTop: '1px solid #0D0D0D' } }
+        ];
+    
+        clearElements.forEach(item => {
+            if (item.styles) {
+                Object.assign(item.element.style, item.styles);
+            }
+            if (item.src) {
+                item.element.src = item.src;
+            }
+            if (item.alt) {
+                item.element.setAttribute('alt', item.alt);
+            }
+            if (item.addClass) {
+                item.element.classList.add(item.addClass);
+            }
+            if (item.removeClass) {
+                item.element.classList.remove(item.removeClass);
+            }
+        });
+    
+        if (window.innerWidth <= 712) {
             headerNavList.style.backgroundColor = '#888888';
             headerNavList.style.borderTop = '1px solid #0D0D0D';
             headerNavList.style.borderBottom = '1px solid #0D0D0D';
-        }
-        headerButton.style.backgroundColor = '#A6A6A6';
-        headerButton.src = menuIconBlack;
-        headerTitle.classList.add('header__clearTheme-title');
-        headerTitle.classList.remove('header__darkTheme-title');
-        imageSwitch.src = moonImage;
-        imageSwitch.setAttribute('alt', 'tema claro');
-        containerApresentation.style.background = 'linear-gradient(to top, #A6A6A640, #A6A6A605)';
-        containerApresentationTitle.style.color = '#0D0D0D';
-        header.style.color = '#0D0D0D';
-        header.style.backgroundColor = '#A6A6A6';
-        headerNavItem.forEach((item) => {
+        };
+    
+        const imageContainers = [
+            containerApresentationImages,
+            containerAboutMyselfImages,
+            containerExperienceImages,
+            containerPerspectiveImages
+        ];
+    
+        imageContainers.forEach(container => {
+            container.forEach(image => {
+                image.style.border = '1px solid #0D0D0D';
+            });
+        });
+    
+        headerNavItem.forEach(item => {
             item.style.color = '#0D0D0D';
         });
-        body.style.backgroundColor = '#A6A6A6';
-        body.style.color = '#0D0D0D';
-        containerApresentationImages.forEach((image) => {
-            image.style.border = '1px solid #0D0D0D'
-        });
-        containerAboutMyselfImages.forEach((image) => {
-            image.style.border = '1px solid #0D0D0D'
-        });
-        containerExperienceImages.forEach((image) => {
-            image.style.border = '1px solid #0D0D0D'
-        });
-        containerPerspectiveImages.forEach((image) => {
-            image.style.border = '1px solid #0D0D0D'
-        });
-        footerSection.style.borderTop = '1px solid #0D0D0D';
     };
+    
 
     function darkThemeMode() {
-        headerNav.style.borderBottom = '1px solid white';
-        headerNav.style.backgroundColor = '#262626';
-        if(window.innerWidth <= 712) {
+        const darkElements = [
+            { element: headerNav, styles: { borderBottom: '1px solid white', backgroundColor: '#262626' } },
+            { element: headerButton, styles: { backgroundColor: '#262626' }, src: menuIconWhite },
+            { element: headerTitle, addClass: 'header__darkTheme-title', removeClass: 'header__clearTheme-title' },
+            { element: imageSwitch, src: sunImage, alt: 'tema escuro' },
+            { element: containerApresentation, styles: { background: 'linear-gradient(to bottom, #26262607, #262626)' } },
+            { element: containerApresentationTitle, styles: { color: 'white' } },
+            { element: header, styles: { color: 'white', backgroundColor: '#262626' } },
+            { element: body, styles: { backgroundColor: '#262626', color: 'white' } },
+            { element: footerSection, styles: { borderTop: '1px solid white' } }
+        ];
+    
+        darkElements.forEach(item => {
+            if (item.styles) {
+                Object.assign(item.element.style, item.styles);
+            };
+            if (item.src) {
+                item.element.src = item.src;
+            };
+            if (item.alt) {
+                item.element.setAttribute('alt', item.alt);
+            };
+            if (item.addClass) {
+                item.element.classList.add(item.addClass);
+            };
+            if (item.removeClass) {
+                item.element.classList.remove(item.removeClass);
+            };
+        });
+    
+        if (window.innerWidth <= 712) {
             headerNavList.style.backgroundColor = '#333';
             headerNavList.style.borderTop = '1px solid white';
             headerNavList.style.borderBottom = '1px solid white';
-        }
-        headerButton.style.backgroundColor = '#262626';
-        headerButton.src = menuIconWhite;
-        headerTitle.classList.add('header__darkTheme-title');
-        headerTitle.classList.remove('header__clearTheme-title');
-        imageSwitch.src = sunImage;
-         imageSwitch.setAttribute('alt', 'tema escuro');
-        containerApresentation.style.background = 'linear-gradient(to bottom, #26262607, #262626)';
-        containerApresentationTitle.style.color = 'white';
-        header.style.color = 'white';
-        header.style.backgroundColor = '#262626';
-        headerNavItem.forEach((item) => {
+        };
+
+        const imageContainers = [
+            containerApresentationImages,
+            containerAboutMyselfImages,
+            containerExperienceImages,
+            containerPerspectiveImages
+        ];
+    
+        imageContainers.forEach(container => {
+            container.forEach(image => {
+                image.style.border = '1px solid white';
+            });
+        });
+    
+        headerNavItem.forEach(item => {
             item.style.color = 'white';
         });
-        body.style.backgroundColor = '#262626';
-        body.style.color = 'white';
-        containerApresentationImages.forEach((image) => {
-            image.style.border = '1px solid white'
-        });
-        containerAboutMyselfImages.forEach((image) => {
-            image.style.border = '1px solid white'
-        });
-        containerExperienceImages.forEach((image) => {
-            image.style.border = '1px solid white'
-        });
-        containerPerspectiveImages.forEach((image) => {
-            image.style.border = '1px solid white'
-        });
-        footerSection.style.borderTop = '1px solid white';
     };
 };
 
@@ -170,7 +195,7 @@ export function handleMenuDropDown() {
             headerNavList.style.visibility = 'hidden';
         } else {
             headerNavList.style.visibility = 'visible';
-        }
+        };
     });
 
     function handleScreenSize(element, event) {
@@ -181,7 +206,7 @@ export function handleMenuDropDown() {
         } else {
             headerNavButton.style.visibility = 'hidden';
             headerNavList.style.visibility = 'visible';
-        }
+        };
     }); 
 };
 

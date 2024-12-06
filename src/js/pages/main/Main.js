@@ -47,7 +47,7 @@ import 'swiper/swiper-bundle.css';
       clearTimeout(timeout);
       timeout = setTimeout(func, wait);
     };
-  }
+  };
   
   export function handleRotation() {
     const containerApresentationImageLeft = document.querySelector('.container__apresentation--image-left');
@@ -58,13 +58,13 @@ import 'swiper/swiper-bundle.css';
       const rotationDegreeLeft = scrollPosition * 0.3 / 90;
       const rotationDegreeRight = scrollPosition * 0.3 / 90;
   
-      containerApresentationImageLeft.style.transform = `rotate(-${rotationDegreeLeft}deg)` ;
-      containerApresentationImageRight.style.transform = `rotate(${rotationDegreeRight}deg)` ;
+      containerApresentationImageLeft.style.transform = `rotate(-${rotationDegreeLeft}deg)`;
+      containerApresentationImageRight.style.transform = `rotate(${rotationDegreeRight}deg)`;
     } else {
       containerApresentationImageLeft.style.transform = '';
       containerApresentationImageRight.style.transform = '';
-    }
-  }
+    };
+  };
 
   export function renderIconsAcademicStatus() {
     const images = document.querySelectorAll('.container__academicStatus--image');
@@ -73,8 +73,8 @@ import 'swiper/swiper-bundle.css';
       images.forEach(image => image.classList.add('small'));
     } else {
       images.forEach(image => image.classList.remove('small'));
-    }
-  }
+    };
+  };
   
   const optimizedHandleRotation = debounce(handleRotation, 200); 
   const optimizedRenderImagesContainerAcademicStatus = debounce(renderIconsAcademicStatus, 200);
