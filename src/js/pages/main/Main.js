@@ -15,9 +15,25 @@ import 'swiper/swiper-bundle.css';
         spaceBetween: 100,
       },
       1024: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      1200: {
         slidesPerView: 3,
         spaceBetween: 10,
       },
+      1660: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      1920: {
+        slidesPerView: 5,
+        spaceBetween: 10,
+      },
+      2560: {
+        slidesPerView: 6,
+        spaceBetween: 10,
+      }
     }
   });
 
@@ -25,23 +41,44 @@ import 'swiper/swiper-bundle.css';
     swiper.slideNext();
   }, 2000);
 
-export function handleRotation() {
-
-  const containerApresentationImageLeft = document.querySelector('.container__apresentation--image-left');
-  const containerApresentationImageRight = document.querySelector('.container__apresentation--image-right');
-
-  if(window.innerHeight >= 768) {
-    const scrolly = window.scrollY;
-
-    const rotation = scrolly / 2;
-
-    containerApresentationImageLeft.style.transform = `rotate(${rotation}deg)`;
-    containerApresentationImageRight.style.transform = `rotate(${rotation}deg)`;
-  } else {
-    containerApresentationImageLeft.style.transform = `rotate(0deg)`; 
-    containerApresentationImageRight.style.transform = `rotate(0deg)`;
+ function debounce(func, wait) {
+    let timeout;
+    return function() {
+      clearTimeout(timeout);
+      timeout = setTimeout(func, wait);
+    };
   }
- }
+  
+  export function handleRotation() {
+    const containerApresentationImageLeft = document.querySelector('.container__apresentation--image-left');
+    const containerApresentationImageRight = document.querySelector('.container__apresentation--image-right');
+  
+    if(window.innerWidth > 768) {
+      const scrollPosition = window.scrollY;
+      const rotationDegreeLeft = scrollPosition * 0.3 / 90;
+      const rotationDegreeRight = scrollPosition * 0.3 / 90;
+  
+      containerApresentationImageLeft.style.transform = `rotate(-${rotationDegreeLeft}deg)` ;
+      containerApresentationImageRight.style.transform = `rotate(${rotationDegreeRight}deg)` ;
+    } else {
+      containerApresentationImageLeft.style.transform = '';
+      containerApresentationImageRight.style.transform = '';
+    }
+  }
 
- window.addEventListener('scroll', handleRotation);
- window.addEventListener('resize', handleRotation);
+  export function renderIconsAcademicStatus() {
+    const images = document.querySelectorAll('.container__academicStatus--image');
+  
+    if(window.innerWidth <= 768) {
+      images.forEach(image => image.classList.add('small'));
+    } else {
+      images.forEach(image => image.classList.remove('small'));
+    }
+  }
+  
+  const optimizedHandleRotation = debounce(handleRotation, 200); 
+  const optimizedRenderImagesContainerAcademicStatus = debounce(renderIconsAcademicStatus, 200);
+  
+  window.addEventListener('resize', optimizedHandleRotation);
+  window.addEventListener('resize', optimizedRenderImagesContainerAcademicStatus);
+  window.addEventListener('scroll', handleRotation);

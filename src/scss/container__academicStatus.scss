@@ -1,6 +1,7 @@
 .container__academicStatus {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    margin-bottom: 4rem;
 
     .container__academicStatus--title {
         font-size: 3rem;
@@ -21,17 +22,27 @@
         align-items: center;
         position: relative;
         top: 15%;
+        list-style: none;
+    }
+
+    .container__academicStatus--image.small{
+        width: 64px;
+        height: 64px;
     }
 }
 
-@media (min-width: 320px) and ( max-width: 425px) {
+@media (min-width: 320px) and ( max-width: 600px) {
     .container__academicStatus {    
         width: 100%;
         height: 100%;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
 
         .container__academicStatus--title {
             font-size: 2rem;
+        }
+
+        .container__academicStatus--text {
+            font-size: large;
         }
 
         .container__academicStatus--images {
@@ -41,19 +52,31 @@
     }
 }
 
-@media (min-width: 426px) and ( max-width: 768px) {
+@media (min-width: 601px) and ( max-width: 768px) {
     .container__academicStatus {    
         width: 100%;
         height: 100%;
         margin-bottom: 3rem;
 
         .container__academicStatus--title {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         .container__academicStatus--images {
-            flex-direction: column;
+            margin: 5rem 0rem;
             gap: 2rem;
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .container__academicStatus {
+        .container__academicStatus--title {
+            font-size: 5rem;
+        }
+
+        .container__academicStatus--text {
+            font-size: xx-large;
         }
     }
 }

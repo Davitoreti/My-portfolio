@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "my-portfolio": "file:",
     "parcel": "^2.13.2",
     "swiper": "^11.1.15"
   },

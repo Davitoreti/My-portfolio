@@ -24,9 +24,10 @@
     <header id="header" class="header">
         <div class="header__menu">
             <nav id="header__nav" class="header__nav">
+                <span class="header__nav--logo" id="header__nav--list-image-logo"><img
+                    src="assets/icons/davi-icon.svg" alt="ícone do Davi, autor do site"></span>
                 <ul class="header__nav--list" aria-label="Menu de navegação">
-                    <li class="header__nav--list-item" id="header__nav--list-image-logo"><img
-                            src="assets/icons/davi-icon.svg" alt="ícone do Davi, autor do site"></li>
+                    
                     <li class="header__nav--list-item"><a href="#header">Home</a></li>
                     <li class="header__nav--list-item"><a href="#container__apresentation">Sobre o projeto</a></li>
                     <li class="header__nav--list-item"><a href="#container__about--mySelf">Sobre mim</a></li>
@@ -35,36 +36,15 @@
                     <li class="header__nav--list-item"><a href="#container__academicStatus">Situação acadêmica</a></li>
                     <li class="header__nav--list-item"><a href="#container__experience">Experiência</a></li>
                     <li class="header__nav--list-item"><a href="#container__perspective">Perspectiva</a></li>
-                    <li class="header__nav--list-item" id="header__nav--list-image-switchTheme"><img id="imageSwitch"
-                            src="assets/icons/sol-icon.png" alt="ícone de trocar o tema para claro ou escuro" tabindex="0"></li>
+                   
                 </ul>
+                <button class="header__nav--button"><img src="assets/icons/menu-icon-white.png" alt=""></button>
+                <span class="header__nav--imageSwitchTheme"><img id="imageSwitch"
+                    src="assets/icons/sol-icon.png" alt="ícone de trocar o tema para claro ou escuro" tabindex="0"></span>
             </nav>
-
-            <nav id="header__menuDropown">
-                    <li class="header__menuDropown--list-item" id="header__menuDropown--list-image-logo"><img
-                            src="assets/icons/davi-icon.svg" alt="ícone do Davi, autor do site"></li>
-                    <button class="header__menuDropown--button">
-                        dropDown
-                    </button>
-                    <ul class="header__menuDropown--list" aria-label="Menu de navegação">
-                    <li class="header__menuDropown--list-item"><a href="#header">Home</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__apresentation">Sobre o projeto</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__about--mySelf">Sobre mim</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__skills">Skills</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__projects">Projetos</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__academicStatus">Situação acadêmica</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__experience">Experiência</a></li>
-                    <li class="header__menuDropown--list-item"><a href="#container__perspective">Perspectiva</a></li>
-                </ul>
-                    <li class="header__menuDropown--list-item" id="header__nav--list-image-switchTheme"><img id="imageSwitch"
-                            src="assets/icons/sol-icon.png" alt="ícone de trocar o tema para claro ou escuro" tabindex="0"></li>
-            </nav>
-
-
-
         </div>
 
-        <div class="header__title" tabindex="0">
+        <div class="header__darkTheme-title" tabindex="0">
             <h1 class="header__title--text">Bem vindo(a) ao meu repositório</h1>
         </div>
     </header>
@@ -190,20 +170,20 @@
                     objetivo do curso é tornar uma pessoa um profissional com conhecimento nas tecnologias mais novas e
                     utilizadas do mercado.</p>
             </article>
-            <div class="container__academicStatus--images">
-                <div>
-                    <img src="assets/icons/js-icon.png" alt="ícone do JavaScript">
-                </div>
-                <div>
-                    <img src="assets/icons/java-icon.png" alt="Ícone do Java">
-                </div>
-                <div>
-                    <img src="assets/icons/c-sharp-icon.png" alt="Ícone c sharp">
-                </div>
-                <div>
-                    <img src="assets/icons/sql-icon.png" alt="ícone do SQL">
-                </div>
-            </div>
+            <ul class="container__academicStatus--images">
+                <li>
+                    <img class="container__academicStatus--image" data-name="js" src="assets/icons/js-icon-128px.png" alt="ícone do JavaScript">
+                </li>
+                <li>
+                    <img class="container__academicStatus--image" data-name="java" src="assets/icons/java-icon-128px.png" alt="Ícone do Java">
+                </li>
+                <li>
+                    <img class="container__academicStatus--image" data-name="c-sharp" src="assets/icons/c-sharp-icon-128px.png" alt="Ícone c sharp">
+                </li>
+                <li>
+                    <img class="container__academicStatus--image" data-name="sql" src="assets/icons/sql-icon-128px.png" alt="ícone do SQL">
+                </li>
+            </ul>
         </section>
 
         <section id="container__experience" class="container__experience" tabindex="0">
@@ -245,8 +225,8 @@
         <div class="footer__section" tabindex="0">
             <small class="footer__text">Desenvolvido por Davi Toreti.</small>
             <div class="footer__icons">
-                <a href="https://github.com/Davitoreti" target="_blank"><img src="assets/icons/github-icon.png" alt="ícone do git hub"></a>
-                <a href="https://www.linkedin.com/in/davi-toreti/" target="_blank"><img src="assets/icons/linkedin-icon.png" alt="ícone do Linkedin"></a>
+                <a href="https://github.com/Davitoreti" target="_blank"><img src="assets/icons/github-icon-32px.png" alt="ícone do git hub"></a>
+                <a href="https://www.linkedin.com/in/davi-toreti/" target="_blank"><img src="assets/icons/linkedin-icon-32px.png" alt="ícone do Linkedin"></a>
             </div>
         </div>
     </footer>

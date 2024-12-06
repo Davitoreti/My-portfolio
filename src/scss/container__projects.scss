@@ -1,6 +1,6 @@
 .container__projects {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   .container__projects--section {
     display: flex;
@@ -18,7 +18,7 @@
     gap: 1rem;
     overflow: hidden;
     list-style: none;
-    margin: 7rem 4rem;
+    margin: 5rem 4rem;
     padding: 1rem;
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.4), 10px 0 10px rgba(0, 0, 0, 0.4);
     z-index: 0;
@@ -35,56 +35,85 @@
   }
 }
 
-@media (width: 320px) {
+@mixin projects-styles-mobile() {
   .container__projects{
-  .swiper-slide-img{
-    width: 17rem;
-  } 
-}
+    width: 100%;
+    height: 100%;
+
+    .container__projects--title {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+
+    .swiper-container {
+      display: flex;
+      align-items: center;
+      margin: 3rem 1rem;
+      padding: 1rem 0;
+    }
+
+  .swiper-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
 }
 
-  @media (min-width: 320px) and ( max-width: 425px) {
+@mixin projects-styles-medium() {
+  .container__projects{
+    .container__projects--title {
+      margin-top: 1rem;
+    }
+
+    .swiper-container {
+      display: flex;
+      align-items: center;
+      margin: 3rem 5rem;
+      padding: 1rem 0;
+    }
+  }
+}
+
+  @media (min-width: 320px) and ( max-width: 600px) {
+    @include projects-styles-mobile();
+  }
+
+  @media (width: 320px) {
     .container__projects{
-      width: 100%;
+      height: 100%;
+  
+    .swiper-slide-img{
+      width: 17rem;
+    } 
+  }
+  }
 
+  @media (min-width: 601px) and ( max-width: 768px) {
+    @include projects-styles-mobile();
+    .container__projects{
       .container__projects--title {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       .swiper-container {
-        display: flex;
-        align-items: center;
-        margin: 3rem 1rem;
-        padding: 1rem 0;
-      }
-
-    .swiper-wrapper {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        margin: 3rem 5rem;
       }
     }
   }
 
-  @media (min-width: 426px) and ( max-width: 768px) {
+  @media (min-width: 769px) and ( max-width: 900px) {
+    @include projects-styles-medium();
+  }
+
+  @media (min-width: 901px) and ( max-width: 1024px) {
+    @include projects-styles-medium();
+  }
+
+  @media (min-width: 1600px) {
     .container__projects{
-      width: 100%;
-
       .container__projects--title {
-        font-size: 2rem;
-      }
-
-      .swiper-container {
-        display: flex;
-        align-items: center;
-        margin: 3rem 1rem;
-        padding: 1rem 0;
-      }
-
-    .swiper-wrapper {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        font-size: 5rem;
       }
     }
   }

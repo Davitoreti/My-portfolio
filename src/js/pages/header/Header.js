@@ -1,5 +1,7 @@
 import moonImage from '../../../assets/icons/lua-icon.png';
 import sunImage from '../../../assets/icons/sol-icon.png';
+import menuIconWhite from '../../../assets/icons/menu-icon-white.png';
+import menuIconBlack from '../../../assets/icons/menu-icon-black.png';
 
 let menuItem = document.querySelectorAll('.header__nav--list-item');
 export function handleMenuHover() {
@@ -35,7 +37,7 @@ export function handleTabNavigation() {
             const focusedElement = document.activeElement;
 
             if (focusedElement === menuItem[menuItem.length - 1] && ev.shiftKey === false) {
-                const firstContentSection = document.querySelector('header_title');
+                const firstContentSection = document.querySelector('header__darkTheme-title');
                 firstContentSection && firstContentSection.focus();
             }
         }
@@ -54,7 +56,9 @@ export function handleThemeSwitch() {
     const header = document.getElementById('header');
     const headerNav = document.getElementById('header__nav');
     const headerNavItem = document.querySelectorAll('a');
-    const headerTitle = document.querySelector('.header__title');
+    const headerNavList = document.querySelector('.header__nav--list');
+    const headerButton = document.querySelector('.header__nav--button img');
+    const headerTitle = document.querySelector('.header__darkTheme-title');
     const footerSection = document.querySelector('.footer__section');
 
     imageSwitch.addEventListener('click', () => {
@@ -81,8 +85,15 @@ export function handleThemeSwitch() {
     function clearThemeMode() {
         headerNav.style.borderBottom = '1px solid #0D0D0D';
         headerNav.style.backgroundColor = '#A6A6A6';
+        if(window.innerWidth <= 712) {
+            headerNavList.style.backgroundColor = '#888888';
+            headerNavList.style.borderTop = '1px solid #0D0D0D';
+            headerNavList.style.borderBottom = '1px solid #0D0D0D';
+        }
+        headerButton.style.backgroundColor = '#A6A6A6';
+        headerButton.src = menuIconBlack;
         headerTitle.classList.add('header__clearTheme-title');
-        headerTitle.classList.remove('header__title');
+        headerTitle.classList.remove('header__darkTheme-title');
         imageSwitch.src = moonImage;
         imageSwitch.setAttribute('alt', 'tema claro');
         containerApresentation.style.background = 'linear-gradient(to top, #A6A6A640, #A6A6A605)';
@@ -112,7 +123,14 @@ export function handleThemeSwitch() {
     function darkThemeMode() {
         headerNav.style.borderBottom = '1px solid white';
         headerNav.style.backgroundColor = '#262626';
-        headerTitle.classList.add('header__title');
+        if(window.innerWidth <= 712) {
+            headerNavList.style.backgroundColor = '#333';
+            headerNavList.style.borderTop = '1px solid white';
+            headerNavList.style.borderBottom = '1px solid white';
+        }
+        headerButton.style.backgroundColor = '#262626';
+        headerButton.src = menuIconWhite;
+        headerTitle.classList.add('header__darkTheme-title');
         headerTitle.classList.remove('header__clearTheme-title');
         imageSwitch.src = sunImage;
          imageSwitch.setAttribute('alt', 'tema escuro');
@@ -142,16 +160,33 @@ export function handleThemeSwitch() {
 };
 
 export function handleMenuDropDown() {
-    const menuDropDown = document.getElementById('navbar');
-    const headerNav = document.getElementById('header__nav');
+    const headerNavButton = document.querySelector('.header__nav--button');
+    const headerNavList = document.querySelector('.header__nav--list');
 
-    if(window.innerWidth <= 768) {
-        menuDropDown.style.display = 'flex';
-        headerNav.style.display = 'none';
-    } else {
-        menuDropDown.style.display = 'none';
-        headerNav.style.display = 'flex';
-    }
+    headerNavList.style.visibility = 'hidden';
+
+    headerNavButton.addEventListener('click', () => {
+        if(headerNavList.style.visibility === 'visible') {
+            headerNavList.style.visibility = 'hidden';
+        } else {
+            headerNavList.style.visibility = 'visible';
+        }
+    });
+
+    function handleScreenSize(element, event) {
+        element.addEventListener(`${event}`, () => {
+            if(element.innerWidth <= 712) {
+            headerNavButton.style.visibility = 'visible';
+            headerNavList.style.visibility = 'hidden';
+        } else {
+            headerNavButton.style.visibility = 'hidden';
+            headerNavList.style.visibility = 'visible';
+        }
+    }); 
+};
+
+    handleScreenSize(window, 'resize');
+    handleScreenSize(window, 'DOMContentLoaded');
 };
 
 export default {
