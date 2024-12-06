@@ -21,6 +21,7 @@
 
   .header__nav--logo {
     display: flex;
+    align-items: center;
     margin-right: 4rem;
     background: none;
     border: none;
@@ -219,6 +220,7 @@
     .header__nav--logo {
       padding: 1.5;
     }
+    
     .header__nav--list-item {
       font-size: large;
       padding: 2rem 0.8rem;
