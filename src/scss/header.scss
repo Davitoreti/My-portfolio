@@ -80,7 +80,7 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 5.8rem;
-    height: 90vh;
+    height: 100vh;
   }
 
   .header__clearTheme-title {
@@ -94,7 +94,7 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 5.8rem;
-    height: 90vh;
+    height: 100vh;
   }
 
   .header__title--text {
@@ -163,10 +163,6 @@
       color: white;
     }
 
-    .header__darkTheme-title {
-      background-size: cover;
-    }
-
     .header__title--text {
       font-size: 2.5rem;
     }
@@ -203,14 +199,6 @@
     .header__title--text {
       font-size: 3rem;
     }
-
-    .header__darkTheme-title {
-      margin-top: 6.1rem;
-    }
-
-    .header__clearTheme-title {
-      margin-top: 6.1rem;
-    }
   }
 }
 
@@ -229,14 +217,6 @@
 
     .header__title--text {
       font-size: 3rem;
-    }
-
-    .header__darkTheme-title {
-      margin-top: 6.1rem;
-    }
-
-    .header__clearTheme-title {
-      margin-top: 6.1rem;
     }
   }
 }
@@ -271,7 +251,7 @@
   }
 }
 
-@media (min-width: 451px) and (max-width: 560px) {
+@media (min-width: 450px) and (max-width: 560px) {
   @include header-styles-mobile();
 
   .header {

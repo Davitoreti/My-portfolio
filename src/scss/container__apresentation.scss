@@ -6,6 +6,7 @@
     font-size: 3rem;
     text-align: center;
     padding-top: 2rem;
+    margin-top: 2rem;
   }
 
   .container__apresentation--text {
@@ -47,7 +48,8 @@
     .container__apresentation--title {
       font-size: 2rem;
       text-align: center;
-      padding-top: 1.5rem;
+      padding-top: 0.5rem;
+      margin-top: 1rem;
     }
 
     .container__apresentation--text {
@@ -73,7 +75,8 @@
 @mixin apresentation-styles-medium {
   .container__apresentation {
     .container__apresentation--title {
-        padding-top: 1.5rem;
+        padding-top: 0.5rem;
+        margin-top: 1rem;
       }
 
     .container__apresentation--images {
@@ -124,6 +127,11 @@
 
 @media (min-width: 1024px) and (max-width: 1200px) {
   .container__apresentation {
+    .container__apresentation--title{
+      padding: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
     .container__apresentation--images {
       display: flex;
       justify-content: space-evenly;
@@ -135,11 +143,21 @@
   }
 }
 
+@media (min-width: 1201px) and (max-width: 1559px) {
+  .container__apresentation{
+    .container__apresentation--title{
+      padding-top: 1rem;
+      margin-top: 6rem;
+    }
+  }
+}
+
 @media (min-width: 1600px) {
   .container__apresentation {
     height: 100%;
     .container__apresentation--title {
       font-size: 4rem;
+      margin-top: 6rem;
     }
 
     .container__apresentation--text {
