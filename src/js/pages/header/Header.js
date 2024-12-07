@@ -19,22 +19,6 @@ export function handleMenuHover() {
     });
 };
 
-export function handleTabNavigation() {
-    menuItems.forEach((item, index) => {
-        item.setAttribute('tabindex', index + 1);
-    });
-
-    document.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Tab' && !ev.shiftKey) {
-            const lastMenuItem = menuItems[menuItems.length - 1];
-            if (document.activeElement === lastMenuItem) {
-                const firstContentSection = document.querySelector('.header__darkTheme-title');
-                if (firstContentSection) firstContentSection.focus();
-            };
-        };
-    });
-};
-
 export function handleThemeSwitch() {
     const body = document.querySelector('body');
     const header = document.getElementById('header');
@@ -67,7 +51,7 @@ export function handleThemeSwitch() {
 
     imageSwitch.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter') {
-            ev.preventDefault(); 
+            ev.preventDefault();
             toggleTheme();
         };
     });
@@ -84,7 +68,7 @@ export function handleThemeSwitch() {
             { element: body, styles: { backgroundColor: '#A6A6A6', color: '#0D0D0D' } },
             { element: footerSection, styles: { borderTop: '1px solid #0D0D0D' } }
         ];
-    
+
         clearElements.forEach(item => {
             if (item.styles) {
                 Object.assign(item.element.style, item.styles);
@@ -102,31 +86,31 @@ export function handleThemeSwitch() {
                 item.element.classList.remove(item.removeClass);
             }
         });
-    
+
         if (window.innerWidth <= 712) {
             headerNavList.style.backgroundColor = '#888888';
             headerNavList.style.borderTop = '1px solid #0D0D0D';
             headerNavList.style.borderBottom = '1px solid #0D0D0D';
         };
-    
+
         const imageContainers = [
             containerApresentationImages,
             containerAboutMyselfImages,
             containerExperienceImages,
             containerPerspectiveImages
         ];
-    
+
         imageContainers.forEach(container => {
             container.forEach(image => {
                 image.style.border = '1px solid #0D0D0D';
             });
         });
-    
+
         headerNavItem.forEach(item => {
             item.style.color = '#0D0D0D';
         });
     };
-    
+
 
     function darkThemeMode() {
         const darkElements = [
@@ -140,7 +124,7 @@ export function handleThemeSwitch() {
             { element: body, styles: { backgroundColor: '#262626', color: 'white' } },
             { element: footerSection, styles: { borderTop: '1px solid white' } }
         ];
-    
+
         darkElements.forEach(item => {
             if (item.styles) {
                 Object.assign(item.element.style, item.styles);
@@ -158,7 +142,7 @@ export function handleThemeSwitch() {
                 item.element.classList.remove(item.removeClass);
             };
         });
-    
+
         if (window.innerWidth <= 712) {
             headerNavList.style.backgroundColor = '#333';
             headerNavList.style.borderTop = '1px solid white';
@@ -171,13 +155,13 @@ export function handleThemeSwitch() {
             containerExperienceImages,
             containerPerspectiveImages
         ];
-    
+
         imageContainers.forEach(container => {
             container.forEach(image => {
                 image.style.border = '1px solid white';
             });
         });
-    
+
         headerNavItem.forEach(item => {
             item.style.color = 'white';
         });
@@ -191,7 +175,7 @@ export function handleMenuDropDown() {
     headerNavList.style.visibility = 'hidden';
 
     headerNavButton.addEventListener('click', () => {
-        if(headerNavList.style.visibility === 'visible') {
+        if (headerNavList.style.visibility === 'visible') {
             headerNavList.style.visibility = 'hidden';
         } else {
             headerNavList.style.visibility = 'visible';
@@ -200,15 +184,15 @@ export function handleMenuDropDown() {
 
     function handleScreenSize(element, event) {
         element.addEventListener(`${event}`, () => {
-            if(element.innerWidth <= 712) {
-            headerNavButton.style.visibility = 'visible';
-            headerNavList.style.visibility = 'hidden';
-        } else {
-            headerNavButton.style.visibility = 'hidden';
-            headerNavList.style.visibility = 'visible';
-        };
-    }); 
-};
+            if (element.innerWidth <= 712) {
+                headerNavButton.style.visibility = 'visible';
+                headerNavList.style.visibility = 'hidden';
+            } else {
+                headerNavButton.style.visibility = 'hidden';
+                headerNavList.style.visibility = 'visible';
+            };
+        });
+    };
 
     handleScreenSize(window, 'resize');
     handleScreenSize(window, 'DOMContentLoaded');
@@ -217,6 +201,5 @@ export function handleMenuDropDown() {
 export default {
     handleMenuHover,
     handleThemeSwitch,
-    handleTabNavigation,
     handleMenuDropDown
 };
