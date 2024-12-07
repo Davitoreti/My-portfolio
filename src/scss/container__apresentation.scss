@@ -75,9 +75,9 @@
 @mixin apresentation-styles-medium {
   .container__apresentation {
     .container__apresentation--title {
-        padding-top: 0.5rem;
-        margin-top: 1rem;
-      }
+      padding-top: 0.5rem;
+      margin-top: 1rem;
+    }
 
     .container__apresentation--images {
       display: flex;
@@ -127,7 +127,7 @@
 
 @media (min-width: 1024px) and (max-width: 1200px) {
   .container__apresentation {
-    .container__apresentation--title{
+    .container__apresentation--title {
       padding: 0.5rem;
       margin-top: 1.5rem;
     }
@@ -144,8 +144,8 @@
 }
 
 @media (min-width: 1201px) and (max-width: 1559px) {
-  .container__apresentation{
-    .container__apresentation--title{
+  .container__apresentation {
+    .container__apresentation--title {
       padding-top: 1rem;
       margin-top: 6rem;
     }

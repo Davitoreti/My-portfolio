@@ -51,7 +51,7 @@
     padding: 2.2rem 1rem;
   }
 
-  .header__nav--list-item a{
+  .header__nav--list-item a {
     color: white;
   }
 
@@ -204,11 +204,10 @@
 
 @mixin header-styles-large {
   .header {
-
     .header__nav--logo {
       padding: 1.5;
     }
-    
+
     .header__nav--list-item {
       font-size: large;
       padding: 2rem 0.8rem;

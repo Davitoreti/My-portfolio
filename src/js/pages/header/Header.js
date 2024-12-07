@@ -111,7 +111,6 @@ export function handleThemeSwitch() {
         });
     };
 
-
     function darkThemeMode() {
         const darkElements = [
             { element: headerNav, styles: { borderBottom: '1px solid white', backgroundColor: '#262626' } },

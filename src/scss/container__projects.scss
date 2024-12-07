@@ -36,7 +36,7 @@
 }
 
 @mixin projects-styles-mobile() {
-  .container__projects{
+  .container__projects {
     width: 100%;
     height: 100%;
 
@@ -52,7 +52,7 @@
       padding: 1rem 0;
     }
 
-  .swiper-wrapper {
+    .swiper-wrapper {
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -61,7 +61,7 @@
 }
 
 @mixin projects-styles-medium() {
-  .container__projects{
+  .container__projects {
     .container__projects--title {
       margin-top: 1rem;
     }
@@ -75,45 +75,45 @@
   }
 }
 
-  @media (min-width: 320px) and ( max-width: 600px) {
-    @include projects-styles-mobile();
-  }
+@media (min-width: 320px) and (max-width: 600px) {
+  @include projects-styles-mobile();
+}
 
-  @media (width: 320px) {
-    .container__projects{
-      height: 100%;
-  
-    .swiper-slide-img{
+@media (width: 320px) {
+  .container__projects {
+    height: 100%;
+
+    .swiper-slide-img {
       width: 17rem;
-    } 
-  }
-  }
-
-  @media (min-width: 601px) and ( max-width: 768px) {
-    @include projects-styles-mobile();
-    .container__projects{
-      .container__projects--title {
-        font-size: 2.5rem;
-      }
-
-      .swiper-container {
-        margin: 3rem 5rem;
-      }
     }
   }
+}
 
-  @media (min-width: 769px) and ( max-width: 900px) {
-    @include projects-styles-medium();
-  }
+@media (min-width: 601px) and (max-width: 768px) {
+  @include projects-styles-mobile();
+  .container__projects {
+    .container__projects--title {
+      font-size: 2.5rem;
+    }
 
-  @media (min-width: 901px) and ( max-width: 1024px) {
-    @include projects-styles-medium();
-  }
-
-  @media (min-width: 1600px) {
-    .container__projects{
-      .container__projects--title {
-        font-size: 5rem;
-      }
+    .swiper-container {
+      margin: 3rem 5rem;
     }
   }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+  @include projects-styles-medium();
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  @include projects-styles-medium();
+}
+
+@media (min-width: 1600px) {
+  .container__projects {
+    .container__projects--title {
+      font-size: 5rem;
+    }
+  }
+}
