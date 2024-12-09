@@ -170,16 +170,62 @@ export function handleThemeSwitch() {
 export function handleMenuDropDown() {
     const headerNavButton = document.querySelector('.header__nav--button');
     const headerNavList = document.querySelector('.header__nav--list');
+    const menuImage = document.getElementById('menuIcon');
+    const firstMenuItem = headerNavList.querySelector('a');
+    const lastMenuItem = headerNavList.querySelector('.header__nav--list-item:last-child');
 
     headerNavList.style.visibility = 'hidden';
 
-    headerNavButton.addEventListener('click', () => {
+    function toggleMenu(ev) {
         if (headerNavList.style.visibility === 'visible') {
             headerNavList.style.visibility = 'hidden';
+            menuImage.setAttribute('aria-label', 'Menu recolhido');
         } else {
             headerNavList.style.visibility = 'visible';
+            menuImage.setAttribute('aria-label', 'Menu expandido');
+
+            if(firstMenuItem) {
+                firstMenuItem.focus();
+            }
+
+            if(lastMenuItem) {
+                lastMenuItem.focus();
+            }
+        }
+    }
+
+    headerNavButton.addEventListener('click', toggleMenu);
+
+    headerNavButton.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter') {
+            toggleMenu();
         };
     });
+
+    headerNavList.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Tab'){
+            if (ev.shiftKey && document.activeElement === firstMenuItem) {
+                ev.preventDefault(); 
+                menuImage.focus();
+            } else if (!ev.shiftKey && document.activeElement === lastMenuItem) {
+                ev.preventDefault();
+                menuImage.focus();
+            }
+        }
+    });
+
+    // headerNavButton.addEventListener('keydown', (ev) => {
+    //     const containerApresentation = document.getElementById('container__apresentation');
+
+    //     if (ev.key === 'Tab') {
+    //         ev.preventDefault();
+    //         if(headerNavList.style.visibility === 'visible') {
+    //             firstMenuItem.focus();
+    //         } else {
+    //             containerApresentation.focus();
+    //         }      
+    //     } 
+    // });
 
     function handleScreenSize(element, event) {
         element.addEventListener(`${event}`, () => {
