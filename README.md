@@ -20,6 +20,6 @@ https://github.com/Davitoreti/My-portfolio
 
 <h3 align="center">
   
-  :construction: PROJETO CONCLUÍDO :construction:
+  :construction: PROJETO FINALIZADO :construction:
   
 </h3>
