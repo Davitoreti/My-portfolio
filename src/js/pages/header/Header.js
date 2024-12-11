@@ -192,37 +192,16 @@ export function handleMenuDropDown() {
         if (ev.key === 'Enter') {
             toggleMenu();
         };
-    });
+    })
 
-    function toggleMenu() {
-        if (headerNavList.style.visibility === 'visible') {
-            headerNavList.style.visibility = 'hidden';
-            menuImage.setAttribute('aria-label', 'Menu recolhido');
-        } else {
-            headerNavList.style.visibility = 'visible';
-            menuImage.setAttribute('aria-label', 'Menu expandido');
-            if (document.activeElement === menuImage) {
-                firstMenuItem.focus();
+    headerNavList.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Tab' && headerNavList.style.visibility === 'visible') {
+            if (ev.shiftKey && document.activeElement === firstMenuItem) {
+                ev.preventDefault();
+                menuImage.focus();
             }
         }
-
-        headerNavButton.addEventListener('click', toggleMenu);
-
-        headerNavButton.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Enter') {
-                toggleMenu();
-            };
-        })
-
-        headerNavList.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Tab' && headerNavList.style.visibility === 'visible') {
-                if (ev.shiftKey && document.activeElement === firstMenuItem) {
-                    ev.preventDefault();
-                    menuImage.focus();
-                }
-            }
-        });
-    }
+    });
 
     function handleScreenSize(element, event) {
         element.addEventListener(`${event}`, () => {
@@ -235,10 +214,6 @@ export function handleMenuDropDown() {
             };
         });
 
-        if (window.innerWidth >= 712) {
-            headerNavButton.remove();
-            menuImage.remove();
-        }
     };
 
     handleScreenSize(window, 'resize');
