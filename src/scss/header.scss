@@ -189,10 +189,6 @@
       }
     }
 
-    .header__nav--list {
-      margin-right: 4rem;
-    }
-
     .header__nav--list-item {
       display: inline-flex;
       font-size: x-small;
@@ -211,10 +207,6 @@
       padding: 1.5;
     }
 
-    .header__nav--list {
-      margin-right: 6rem;
-    }
-
     .header__nav--list-item {
       font-size: large;
       padding: 2rem 0.8rem;
@@ -229,10 +221,6 @@
 
 @mixin header-styles-xlarge {
   .header {
-    .header__nav--list {
-      margin-right: 6rem;
-    }
-
     .header__nav--list-item {
       margin-left: 2rem;
       padding: 2rem 1rem;
@@ -317,11 +305,6 @@
 
 @media (min-width: 713px) and (max-width: 768px) {
   @include header-styles-medium();
-  .header {
-    .header__nav--list {
-      margin-right: 3rem;
-    }
-  }
 }
 
 @media (min-width: 769px) and (max-width: 820px) {
